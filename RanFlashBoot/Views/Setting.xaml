@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:RanFlashBoot.ViewModels"
+             x:DataType="vm:SettingViewModel"
+             x:Class="RanFlashBoot.Setting"
+             xmlns:language="clr-namespace:RanFlashBoot.Resources.Locations"
+             Title="">
+    <ScrollView>
+    <Grid>
+        <ContentView Content="{Binding CurrentView}" IsVisible="{Binding IsCurrentViewVisible}" />
+        <VerticalStackLayout BackgroundColor="Olive" IsVisible="{Binding IsVerticalStackLayoutVisible}">
+
+            <Label 
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <Button Text="{x:Static language:AppResources.WriteISO}" BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10" Command="{Binding NavigateToMainPageCommand}"/>
+            <Button Text="Записать .vmdx на флешку" BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10" Margin="20"/>
+            <Button Text="Создать флешку с Windows To Go" BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10"/>
+            <Button Text="Создать флешку с WinPE" BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10" Margin="20"/>
+            <Button Text="Записать образ на CD-ROM" BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10"/>
+            <Button Text="Записать img на ТВ бокс" BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10" Margin="20"/>
+            <Button Text="Прошить iOS " BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10" Margin="20"/>
+            <Button Text="Установить  Windows ARM" BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10" Margin="20"/>
+            <Button Text="Установить Linux на планшет " BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10"/>
+            <Button Text="Создать EFI для MacOS(Hackintosh)" BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10" Margin="20"/>
+            <Button Text="Установить  ChromeOS на ПК" BackgroundColor="Aqua" TextColor="Black" WidthRequest="1000" Padding="10"/>
+            
+
+        </VerticalStackLayout>
+    </Grid>
+    </ScrollView>
+</ContentPage>

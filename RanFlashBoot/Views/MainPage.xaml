@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RanFlashBoot.MainPage"
+             xmlns:vm="clr-namespace:RanFlashBoot.ViewModels"
+             x:DataType="vm:MainPageViewModel">
+
+    <!-- Корневой контейнер, который делит экран на две части -->
+    <Grid RowDefinitions="Auto, *">
+
+        <!-- Топ-панель или хост для кастомного контента (Строка 0) -->
+        <ContentView x:Name="ContentHost"
+                     Grid.Row="0"
+                     Content="{Binding CurrentView}"
+                     Padding="20"
+                     BackgroundColor="#363636" />
+
+        <!-- Основная форма со скроллом (Строка 1) -->
+        <ScrollView Grid.Row="1" BackgroundColor="{AppThemeBinding Light=Blue, Dark=#1C1C1C}">
+            <VerticalStackLayout Padding="15" Spacing="15" BackgroundColor="Transparent">
+
+                <Label Text="Свойства устройства" FontAttributes="Bold" TextColor="#1F4E79" FontSize="14"/>
+
+                <Border Padding="10" StrokeShape="RoundRectangle 4">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Устройство" FontSize="12" Margin="0,0,0,-5"/>
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Picker x:Name="DevicePicker" Grid.Column="0" Title="Выберите устройство записи..." VerticalOptions="Center" BackgroundColor="#A85757" ItemsSource="{Binding Drives}" SelectedItem="{Binding SelectedDrive}"/>
+                            <Button Grid.Column="1" Text="🔄" WidthRequest="45" HeightRequest="40" Padding="0" Margin="5,0,0,0" Clicked="OnSelectDeviceClicked" ToolTipProperties.Text="Обновить список"/>
+                        </Grid>
+
+                        <Label Text="Метод загрузки" FontSize="12" Margin="0,5,0,-5"/>
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Picker Grid.Column="0" SelectedIndex="0" VerticalOptions="Center" BackgroundColor="#A85757">
+                                <Picker.Items>
+                                    <x:String>Диск или ISO-образ (Выберите образ)</x:String>
+                                    <x:String>Незагрузочный образ</x:String>
+                                    <x:String>FreeDOS</x:String>
+                                </Picker.Items>
+                            </Picker>
+                            <Button Grid.Column="1" Text="ВЫБРАТЬ" FontAttributes="Bold" WidthRequest="90" HeightRequest="40" Margin="5,0,0,0" Clicked="OnSelectFileClicked" Command="{Binding OpenDirectoryCommand}"/>
+                       </Grid>
+
+                        <Grid ColumnDefinitions="*, *" ColumnSpacing="10" Margin="0,5,0,0">
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label Text="Схема раздела" FontSize="12"/>
+                                <Picker SelectedIndex="0" BackgroundColor="#A85757">
+                                    <Picker.Items>
+                                        <x:String>MBR</x:String>
+                                        <x:String>GPT</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="Целевая система" FontSize="12"/>
+                                <Picker SelectedIndex="0" BackgroundColor="#A85757">
+                                    <Picker.Items>
+                                        <x:String>BIOS или UEFI</x:String>
+                                        <x:String>UEFI (не CSM)</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Параметры форматирования" FontAttributes="Bold" TextColor="#1F4E79" FontSize="14"/>
+                <Border Padding="10" StrokeShape="RoundRectangle 4">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Новая метка тома" FontSize="12" Margin="0,0,0,-5"/>
+                        <Entry Placeholder="RanFlash_Drive" MaxLength="32" BackgroundColor="#A85757"/>
+                        <Grid ColumnDefinitions="*, *" ColumnSpacing="10">
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label Text="Файловая система" FontSize="12"/>
+                                <Picker SelectedIndex="0" BackgroundColor="#A85757">
+                                    <Picker.Items>
+                                        <x:String>NTFS</x:String>
+                                        <x:String>FAT32 (По умолчанию)</x:String>
+                                        <x:String>exFAT</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="Размер кластера" FontSize="12"/>
+                                <Picker SelectedIndex="0" BackgroundColor="#A85757">
+                                    <Picker.Items>
+                                        <x:String>4096 байт (По умолчанию)</x:String>
+                                        <x:String>8192 байт</x:String>
+                                        <x:String>16 КБ</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Статус" FontAttributes="Bold" TextColor="#1F4E79" FontSize="14"/>
+                <VerticalStackLayout Spacing="5">
+                    <ProgressBar Progress="0.0" ProgressColor="#28A745" HeightRequest="15"/>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Grid.Column="0" Text="Готов" VerticalOptions="Center" FontAttributes="Bold"/>
+                        <Label Grid.Column="1" Text="00:00:00" VerticalOptions="Center" TextColor="Gray"/>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <BoxView HeightRequest="1" Color="Gray" Margin="0,5" HorizontalOptions="Fill"/>
+
+                <Grid ColumnDefinitions="Auto, *, Auto, Auto" ColumnSpacing="8">
+                    <Picker Grid.Column="0" Title="🌐" WidthRequest="65" HorizontalTextAlignment="Center">
+                        <Picker.Items>
+                            <x:String>English</x:String>
+                            <x:String>Русский</x:String>
+                            <x:String>Українська</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Button Grid.Column="2" Text="Тема" WidthRequest="80" Clicked="OnChangeThemeClicked" BackgroundColor="Transparent" BorderWidth="1" CornerRadius="3"/>
+                    <Button Grid.Column="3" Text="СТАРТ" FontAttributes="Bold" WidthRequest="100" BackgroundColor="#007ACC" TextColor="White" Clicked="OnChangeLanguageClicked" Command="{Binding WriteISOToDriveCommand}"/>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentView>
+

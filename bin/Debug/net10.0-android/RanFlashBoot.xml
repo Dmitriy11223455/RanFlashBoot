@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RanFlashBoot</name>
+    </assembly>
+    <members>
+        <member name="T:RanFlashBoot.Resources.Locations.AppResources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:RanFlashBoot.Resources.Locations.AppResources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:RanFlashBoot.Resources.Locations.AppResources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="P:RanFlashBoot.Resources.Locations.AppResources.Write_vmdx">
+            <summary>
+              Ищет локализованную строку, похожую на Записать .vmdx на флешку.
+            </summary>
+        </member>
+        <member name="P:RanFlashBoot.Resources.Locations.AppResources.WriteISO">
+            <summary>
+              Ищет локализованную строку, похожую на Write ISO.
+            </summary>
+        </member>
+        <member name="T:RanFlashBoot.ViewModels.MainPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.MainPageViewModel.SelectedDrive">
+            <inheritdoc cref="F:RanFlashBoot.ViewModels.MainPageViewModel._selectedDrive"/>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.MainPageViewModel.Drives">
+            <inheritdoc cref="F:RanFlashBoot.ViewModels.MainPageViewModel._drives"/>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.MainPageViewModel.Title">
+            <inheritdoc cref="F:RanFlashBoot.ViewModels.MainPageViewModel._title"/>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.MainPageViewModel.NavigationService">
+            <inheritdoc cref="F:RanFlashBoot.ViewModels.MainPageViewModel._navigationService"/>
+        </member>
+        <member name="F:RanFlashBoot.ViewModels.MainPageViewModel.writeISOToDriveCommand">
+            <summary>The backing field for <see cref="P:RanFlashBoot.ViewModels.MainPageViewModel.WriteISOToDriveCommand"/>.</summary>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.MainPageViewModel.WriteISOToDriveCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:RanFlashBoot.ViewModels.MainPageViewModel.WriteISOToDrive"/>.</summary>
+        </member>
+        <member name="F:RanFlashBoot.ViewModels.MainPageViewModel.openDirectoryCommand">
+            <summary>The backing field for <see cref="P:RanFlashBoot.ViewModels.MainPageViewModel.OpenDirectoryCommand"/>.</summary>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.MainPageViewModel.OpenDirectoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:RanFlashBoot.ViewModels.MainPageViewModel.OpenDirectory"/>.</summary>
+        </member>
+        <member name="T:RanFlashBoot.ViewModels.SettingViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.SettingViewModel.IsCurrentViewVisible">
+            <inheritdoc cref="F:RanFlashBoot.ViewModels.SettingViewModel._isCurrentViewVisible"/>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.SettingViewModel.IsVerticalStackLayoutVisible">
+            <inheritdoc cref="F:RanFlashBoot.ViewModels.SettingViewModel._isVerticalStackLayoutVisible"/>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.SettingViewModel.CurrentView">
+            <inheritdoc cref="F:RanFlashBoot.ViewModels.SettingViewModel._currentView"/>
+        </member>
+        <member name="F:RanFlashBoot.ViewModels.SettingViewModel.navigateToMainPageCommand">
+            <summary>The backing field for <see cref="P:RanFlashBoot.ViewModels.SettingViewModel.NavigateToMainPageCommand"/>.</summary>
+        </member>
+        <member name="P:RanFlashBoot.ViewModels.SettingViewModel.NavigateToMainPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:RanFlashBoot.ViewModels.SettingViewModel.NavigateToMainPage"/>.</summary>
+        </member>
+        <member name="T:RanFlashBoot.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedDrive">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedDrive" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Drives">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Drives" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NavigationService">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NavigationService" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsCurrentViewVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsCurrentViewVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsVerticalStackLayoutVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsVerticalStackLayoutVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentView">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentView" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedDrive">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedDrive" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Drives">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Drives" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NavigationService">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NavigationService" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsCurrentViewVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsCurrentViewVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsVerticalStackLayoutVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsVerticalStackLayoutVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentView">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentView" generated properties.</summary>
+        </member>
+    </members>
+</doc>

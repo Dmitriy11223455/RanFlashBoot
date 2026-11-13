@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="RanFlashBoot" mvid="521945d4a8364d0d85cf8fa7d4133185">
+  <java-to-managed>
+    <entry java-name="crc64083e1d27403a10a0/MainActivity" managed-name="RanFlashBoot.MainActivity, RanFlashBoot" managed-type-token-id="33554442" />
+    <entry java-name="crc64083e1d27403a10a0/MainApplication" managed-name="RanFlashBoot.MainApplication, RanFlashBoot" managed-type-token-id="33554443" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64083e1d27403a10a0/MainActivity" managed-name="RanFlashBoot.MainActivity, RanFlashBoot" managed-type-token-id="33554442" />
+    <entry java-name="crc64083e1d27403a10a0/MainApplication" managed-name="RanFlashBoot.MainApplication, RanFlashBoot" managed-type-token-id="33554443" />
+  </managed-to-java>
+</api>
